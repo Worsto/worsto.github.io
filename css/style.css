@@ -323,11 +323,11 @@ a:hover .special-button {
 
 /* Footer */
 
-.main-footer div:first-child {
+.footer-nav {
 	background-color: var(--dark-background);
 }
 
-.main-footer div:last-child {
+.footer-linkbar {
 	background-color: var(--dark-background-extra);
 }
 
