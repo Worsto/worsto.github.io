@@ -83,7 +83,6 @@ img {
 	width: 960px;
 	margin: 0 auto;
 	padding: 0 10px;
-	padding-bottom: 60px;
   }
 
 .heading-main {
@@ -180,6 +179,7 @@ a.button-deal {
 .main-header {
 	background-color: var(--header-light-background);
 	margin-bottom: 59px;
+	padding-bottom: 60px;
 }
 
 .top-bar {
@@ -203,14 +203,14 @@ a.button-deal {
 }
 
 .top-bar [for="search-main"] {
-	margin-right: -165px;
+	margin-right: -60px;
 }
 
 .top-bar [type="search"] {
 	background-color: transparent;
 	border-style: none;
 	min-height: 42px;
-	padding-left: 45px;
+	padding-left: 60px;
 	width: 270px;
 }
 
@@ -297,6 +297,9 @@ a.button-deal {
 /* Main */
 
 /* Special */
+.special {
+	padding-bottom: 60px;
+}
 
 .special-list {
 	list-style: none;
@@ -376,6 +379,11 @@ a:hover .special-button {
 }
 
 /* Popular goods */
+
+.popular-goods {
+	padding-bottom: 60px;
+}
+
 .goods-action {
 	display: none;
 }
@@ -425,6 +433,10 @@ a:hover .special-button {
 
 /* Popular manufacturers */
 
+.popular-manufacturers {
+	padding-bottom: 60px;
+}
+
 .popular-manufacturers .heading-main {
 	padding-right: 19px;
 }
@@ -454,6 +466,7 @@ a:hover .special-button {
 
 .services {
 	padding-top: 60px;
+	padding-bottom: 60px;
 }
 
 .heading-extra {
@@ -511,6 +524,7 @@ a:hover .special-button {
 	display: flex;
 	justify-content: space-between;
 	padding-top: 70px;
+	padding-bottom: 60px;
 }
 
 .main-bottom p {
@@ -625,6 +639,7 @@ a:hover .special-button {
 	grid-template-columns: 220px 1fr;
 	grid-gap: 20px;
 	align-content: start;
+	padding-bottom: 60px;
 }
 
 .catalog-list ul {
@@ -709,4 +724,5 @@ div.sort {
 
 .catalog-article {
 	padding-top: 70px;
+	padding-bottom: 60px;
 }
