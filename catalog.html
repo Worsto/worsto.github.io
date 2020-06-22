@@ -11,23 +11,27 @@
 	<header class="main-header">
 		<div class="top-bar">
 			<div class="wrapper header-top">
-				<a href="#">
-					<img src="img/logo.png" width="220" height="47" alt="Логотип Техномарт">
+				<a class="logo-box" href="index.html">
+					<img class="header-logo-img" src="img/logo.svg" width="108" height="18" alt="Логотип Техномарт">
 				</a>
-				
-				<label for="search-main">Поиск:</label>
-				<input type="search" id="search-main">
 
-				<a class="top-bar-button" href="blank.html">Закладки: <span>0</span></a>
+				<form class="search-form" action="https://echo.htmlacademy.ru/courses" method="get">
+					<input class="search-input" name="main-search" id="main-search" type="search" placeholder="Поиск:">
 
-				<a class="top-bar-button" href="blank.html">Корзина: <span>0</span></a>
+					<svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17"><path fill="#ffffff" d="M17 15.586l-3.542-3.542A7.465 7.465 0 0 0 15 7.5 7.5 7.5 0 1 0 7.5 15c1.71 0 3.282-.579 4.544-1.542L15.586 17 17 15.586zM2 7.5C2 4.467 4.467 2 7.5 2 10.532 2 13 4.467 13 7.5c0 3.032-2.468 5.5-5.5 5.5A5.506 5.506 0 0 1 2 7.5z"/></svg>
+				</form>
+			
+
+				<a class="top-bar-button top-bar-bookmark" href="blank.html">Закладки: <span>0</span></a>
+
+				<a class="top-bar-button top-bar-cart cart-fill" href="blank.html">Корзина: <span>10</span></a>
 
 				<a class="button-deal" href="blank.html">Оформить заказ</a>
 			</div>
 		</div>
 
 		<div class="wrapper header-bottom">
-			<p class="header-emphasis">Интернет-магазин строительных материалов и инструментов для ремонта</p>
+			<p class="header-emphasis">Интернет-магазин<br>строительных материалов<br>и инструментов для ремонта</p>
 			
 			<div class="header-contacts">
 				<a class="header-tel" href="tel:+78125550555">+7 (812) 555-05-55</a>
@@ -36,13 +40,15 @@
 			</div>
 
 			<div class="header-sign-zone signed">
-				<p class="header-username">Зубенко Михаил Петрович</p>
+				<div class="user-box">
+					<p class="header-username">Зубенко Михаил</p>
 
-				<a href="blank.html">Выйти</a>
+					<a class="logout-button" href="blank.html" aria-label="Выход"></a>
+				</div>
 
 				<a class="header-extra-link" href="blank.html">Мои заказы</a>
 
-				<a class="header-extra-link" href="blank.html">Личный кабинет</a>
+				<a class="header-extra-link sign-zone-link" href="blank.html">Личный кабинет</a>
 			</div>			
 
 			<nav>
@@ -53,7 +59,7 @@
 					<li><a href="blank.html">Новости</a></li>
 					<li><a href="blank.html">Спецпредложения</a></li>
 					<li><a href="blank.html">Доставка</a></li>
-					<li><a href="blank.html">Конакты</a></li>
+					<li><a href="blank.html">Контакты</a></li>
 				</ul>
 			</nav>
 		</div>	
@@ -63,7 +69,7 @@
 		<div class="page-catalog wrapper">
 			<h1 class="visually-hidden">Техномарт: каталог</h1>
 			<div class="breadcrumbs">
-				<a class="path-link" href="blank.html">home</a>
+				<a class="path-home" href="blank.html" aria-label="Главная"></a>
 
 				<a class="path-link" href="blank.html">Каталог</a>
 
@@ -76,82 +82,110 @@
 				<h2>Перфораторы</h2>
 			</div>
 
+			<section class="sort-bar sort-box">
+				<h3>Сортировка:</h3>
+
+				<div class="sort-category-box">
+					<input class="visually-hidden" type="radio" name="sort-category" id="sort-radio-price" checked>
+					<label class="sort-button" for="sort-radio-price">По цене</label>
+
+					<input class="visually-hidden" type="radio" name="sort-category" id="sort-radio-type" >
+					<label class="sort-button" for="sort-radio-type">По типу</label>
+
+					<input class="visually-hidden" type="radio" name="sort-category" id="sort-radio-functional">
+					<label class="sort-button" for="sort-radio-functional">По функционалу</label>
+				</div>
+
+				<div class="sort-arrow-box">
+					<input class="visually-hidden sort-radio" type="radio" name="sort-arrow" id="sort-arrow-reverse" checked aria-label="По убыванию">
+					<label class="sort-arrow arrow-reverse" for="sort-arrow-reverse"></label>
+
+					<input class="visually-hidden sort-radio" type="radio" name="sort-arrow" id="sort-arrow-regular" aria-label="По возрастанию">
+					<label class="sort-arrow arrow-regular" for="sort-arrow-regular"></label>
+				</div>
+			</section>
+
+
 			<section class="filter">
-				<h3 class="visually-hidden">Фильтры и сортировка:</h3>
+				<h3 class="sort-box">Фильтр:</h3>
 
-				<p class="sort">Фильтр:</p>
+				<form class="filter-form" method="get" action="https://echo.htmlacademy.ru">
+					<fieldset class="filter-item">
+						<legend class="filter-heading">Цена:</legend>
+						<div class="range-filter">
+						  <div class="range-controls">
+							<div class="scale">
+							  <div class="bar" style="
+								width: 78%;
+								margin-left: 6%
+							  "></div>
+							</div>
+							<div class="toggle toggle-min" tabindex="0" style="
+							  left: 8%
+							"></div>
+							<div class="toggle toggle-max" tabindex="0" style="
+							  left: 73%
+							"></div>
+						  </div>
+						  <div class="price-controls">
+							<input type="number" name="min-price" value="0" aria-label="цена от">
 
-				<div class="sort">
-					<p>Сортировка:</p>
+							<span>&mdash;</span>
+							
+							<input type="number" name="max-price" value="30000" aria-label="цена до">
+						  </div>
+						</div>
+					</fieldset>
+				
+					<fieldset class="filter-item">
+						<legend class="filter-heading filter-borderline">Производители:</legend>
 
-					<button class="sort-button sort-active" type="button">По цене</button>
+						<ul class="filter-manufacturers-list">
+							<li>
+								<input class="visually-hidden" type="checkbox" name="manufacturer" id="bosch-checkbox" checked>
+								<label class="manufacturers-label" for="bosch-checkbox">Bosch</label>
+							</li>
+		
+							<li>
+								<input class="visually-hidden" type="checkbox" name="manufacturer" id="interskol-checkbox">
+								<label class="manufacturers-label" for="interskol-checkbox">Интерскол</label>
+							</li>
+		
+							<li>
+								<input class="visually-hidden" type="checkbox" name="manufacturer" id="makita-checkbox" checked>
+								<label class="manufacturers-label" for="makita-checkbox">Makita</label>
+							</li>
+		
+							<li>
+								<input class="visually-hidden" type="checkbox" name="manufacturer" id="dewalt-checkbox">
+								<label class="manufacturers-label" for="dewalt-checkbox">Dewalt</label>
+							</li>
+		
+							<li>
+								<input class="visually-hidden" type="checkbox" name="manufacturer" id="hitachi-checkbox">
+								<label class="manufacturers-label" for="hitachi-checkbox">Hitachi</label>
+							</li>			
+						</ul>
+					</fieldset>
 
-					<button class="sort-button" type="button">По типу</button>
+					<fieldset class="filter-item">
+						<legend class="filter-heading filter-borderline">Питание:</legend>
 
-					<button class="sort-button" type="button">По функционалу</button>
+						<ul class="filter-power-source-list">
+							<li>
+								<input class="visually-hidden" type="radio" name="power-source" id="battery-radio" checked>
+								<label class="power-source-label" for="battery-radio">Аккумуляторные</label>
+							</li>
+		
+							<li>
+								<input class="visually-hidden" type="radio" name="power-source" id="corded-electric-radio">
+								<label class="power-source-label" for="corded-electric-radio">Сетевые</label>
+							</li>
+						</ul>	
+					</fieldset>
 
-					<button class="sort-arrow" type="button">Прямая</button>
-
-					<button class="sort-arrow" type="button">Обратная</button>
-				</div>
-
-				<h4  class="filter-heading">Цена:</h4>
-
-				<div class="range">
-					<div class="range-box">
-						<input type="range" name="price" id="price_from-range">
-						<input type="range" name="price" id="price_to-range">
-					</div>
-
-					<p>
-						<span>0</span>&#8212;<span>50000</span>
-					</p>
-				</div>
-
-				<h4 class="filter-heading">Производители:</h4>
-
-				<ul>
-					<li>
-						<input type="checkbox" name="manufacturer" id="bosch-checkbox" checked>
-						<label for="bosch-checkbox">Bosch</label>
-					</li>
-
-					<li>
-						<input type="checkbox" name="manufacturer" id="interskol-checkbox">
-						<label for="interskol-checkbox">Интерскол</label>
-					</li>
-
-					<li>
-						<input type="checkbox" name="manufacturer" id="makita-checkbox" checked>
-						<label for="makita-checkbox">Makita</label>
-					</li>
-
-					<li>
-						<input type="checkbox" name="manufacturer" id="dewalt-checkbox">
-						<label for="dewalt-checkbox">Dewalt</label>
-					</li>
-
-					<li>
-						<input type="checkbox" name="manufacturer" id="hitachi-checkbox">
-						<label for="hitachi-checkbox">Hitachi</label>
-					</li>			
-				</ul>
-
-				<h4 class="filter-heading">Питание:</h4>
-
-				<ul>
-					<li>
-						<input type="radio" name="power_source" id="battery-radio" checked>
-						<label for="battery-radio">Аккумуляторные</label>
-					</li>
-
-					<li>
-						<input type="radio" name="power_source" id="corded_electric-radio">
-						<label for="corded_electric-radio">Сетевые</label>
-					</li>
-				</ul>		
-
-				<button class="filter-button" type="button">Показать</button>
+					<button class="filter-button" type="button">Показать</button>
+				  </form>				
 			</section>
 		
 			<section class="catalog-list">
@@ -303,13 +337,13 @@
 					</li>
 				</ul>
 
-				<button class="page-button button" type="button">1</button>
+				<button class="page-button current-page" type="button">1</button>
 
 				<button class="page-button" type="button">2</button>
 
 				<button class="page-button" type="button">3</button>
 
-				<button class="page-button" type="button">Следующая</button>
+				<button class="page-button page-button-next" type="button">Следующая</button>
 			</section>	
 		</div>
 
@@ -325,19 +359,23 @@
 	<footer class="main-footer">
 		<div class="footer-nav">		
 			<div class="wrapper">
-				<a href="#">
-					<img src="img/logo.png" width="220" height="47" alt="Логотип Техномарт">
+				<a class="logo-box" href="#">
+					<img class="footer-logo-img" src="img/logo.svg" width="108" height="18" alt="Логотип Техномарт">
 				</a>
 
-				<p>г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8</p>	
+				<div class="footer-contacts">
+					<a href="blank.html" class="footer-address">г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8</a>
+					
+					<a class="footer-tel" href="tel:+78125550555">+7 (812) 555-05-55</a>
+				</div>
 
-				<ul>
+				<ul class="footer-nav-list">
 					<li><a href="blank.html">Компания</a></li>
 					<li><a href="blank.html">Новости</a></li>
 					<li><a href="catalog.html">Каталог</a></li>
 					<li><a href="blank.html">Доставка</a></li>
-					<li><a href="blank.html">Конакты</a></li>
-					<li class="footer-extra-color"><a href="blank.html">Материалы</a></li>
+					<li><a href="blank.html">Контакты</a></li>
+					<li class="footer-nav-margin footer-extra-color"><a href="blank.html">Материалы</a></li>
 					<li class="footer-extra-color"><a href="blank.html">Техника</a></li>
 					<li class="footer-extra-color"><a href="blank.html">Инструмент</a></li>
 					<li class="footer-extra-color"><a href="blank.html">Спецпредложения</a></li>
@@ -351,22 +389,22 @@
 
 				<ul class="footer-social">
 					<li>
-						<a href="vk.com">
-							<span>Вконтакте</span>
+						<a class="social-button" href="vk.com">
+							<span class="visually-hidden">Вконтакте</span>
 							<svg width="27" height="16" viewBox="0 0 128 76"><path d="M125,5.15c.89-3,0-5.15-4.23-5.15h-14a6,6,0,0,0-6.09,4S93.59,21.31,83.5,32.59c-3.26,3.26-4.74,4.3-6.52,4.3-.89,0-2.18-1-2.18-4V5.15c0-3.56-1-5.15-4-5.15h-22a3.37,3.37,0,0,0-3.56,3.22c0,3.37,5,4.15,5.56,13.64V37.48c0,4.52-.82,5.34-2.6,5.34-4.74,0-16.29-17.43-23.13-37.38C23.72,1.57,22.38,0,18.8,0H4.8C.8,0,0,1.88,0,4c0,3.71,4.75,22.1,22.1,46.42C33.67,67,50,76,64.8,76c8.9,0,10-2,10-5.45V58c0-4,.84-4.8,3.66-4.8,2.08,0,5.64,1,13.94,9C101.9,71.74,103.46,76,108.8,76h14c4,0,6-2,4.85-6s-5.8-9.64-11.81-16.4c-3.27-3.86-8.16-8-9.64-10.09-2.08-2.67-1.49-3.86,0-6.23,0,0,17-24,18.83-32.18Z" fill="#fff"/></svg>
 						</a>
 					</li>
 
 					<li>
-						<a href="facebook.com">
-							<span>facebook</span>
+						<a class="social-button" href="facebook.com">
+							<span class="visually-hidden">facebook</span>
 							<svg width="19" height="22" viewBox="0 0 10.15 21.74"><path d="M3.34 1.12A4.77 4.77 0 0 1 6.53 0h3.61v3.81H7.81a1.07 1.07 0 0 0-1.09.83v2.55h3.42c-.08 1.23-.24 2.45-.41 3.67h-3v10.87H2.21V10.86H0V7.21h2.19V3.66a3.83 3.83 0 0 1 1.15-2.54z" fill="#fff"/></svg>
 						</a>
 					</li>
 
 					<li>
-						<a href="instagram.com">
-							<span>instagram</span>
+						<a class="social-button" href="instagram.com">
+							<span class="visually-hidden">instagram</span>
 							<svg width="20" height="20" viewBox="0 0 20 20"><path d="M18 0H2a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm-8 6a4 4 0 1 1-4 4 4 4 0 0 1 4-4zM2.5 18a.47.47 0 0 1-.5-.5V9h2.1a3.4 3.4 0 0 0-.1 1 6 6 0 1 0 12 0 3.4 3.4 0 0 0-.1-1H18v8.5a.47.47 0 0 1-.5.5zM18 4.5a.47.47 0 0 1-.5.5h-2a.47.47 0 0 1-.5-.5v-2a.47.47 0 0 1 .5-.5h2a.47.47 0 0 1 .5.5z" fill="#fff"/></svg>
 						</a>
 					</li>
@@ -387,14 +425,18 @@
 		</div>
 	</footer>
 
-	<div class="cart-popup">
-		<p>Товар добавлен в корзину</p>
+	<div class="modal-box modal-active">
+		<div class="cart-popup modal-inner-box">
+			<p>Товар добавлен в корзину</p>
 
-		<a class="button" href="blank.html">Оформить заказ</a>
+			<div class="modal-button-container">
+				<a class="button" href="blank.html">Оформить заказ</a>
 
-		<button class="sign-anchor" type="button">Продолжить покупки</button>
+				<button class="sign-anchor" type="button">Продолжить покупки</button>
+			</div>
 
-		<button type="button">Закрыть окно</button>
+			<button class="modal-close-button" type="button">Закрыть окно</button>
+		</div>
 	</div>
 </body>
 </html>
