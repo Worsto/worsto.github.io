@@ -171,6 +171,12 @@ input[type="radio"].visually-hidden {
     height: 38px;
     min-width: 38px;
     margin-right: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    vertical-align: middle;
+    color: inherit;
 }
 
 .page-button.current-page {
@@ -947,7 +953,7 @@ a:active .special-button {
 }
 
 .popular-goods ul,
-.catalog-list ul {
+.goods-list {
     list-style: none;
     padding: 0;
     display: grid;
@@ -1917,10 +1923,15 @@ input[name="sort-category"]:checked + .sort-button {
     margin-top: 7px;
 }
 
-.catalog-list ul {
+.goods-list {
     grid-template-columns: repeat(3, 1fr);
     margin-bottom: 48px;
     /* margin-top: -1px; */
+}
+
+.pages-list {
+    display: flex;
+    list-style: none;
 }
 
 .catalog-article {
