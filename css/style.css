@@ -416,16 +416,22 @@ a:active .special-button {
     align-items: center;
     margin-right: -80px;
     margin-left: -80px;
+    padding-right: 80px;
+    padding-left: 80px;
     height: 112px;
 }
 
 .modal-button-container .button {
     flex-grow: 1;
     margin: 0px;
-    margin-right: 80px;
-    margin-left: 80px;
+    margin-right: auto;
+    margin-left: auto;
     cursor: pointer;
     height: 38px;
+}
+
+.modal-button-container .button:not(:first-child) {
+    margin-left: 10px;
 }
 
 .modal-map img {
@@ -483,6 +489,38 @@ a:active .special-button {
 
 .modal-active {
     display: flex;
+}
+
+.cart-popup {
+    min-width: 620px;
+    padding-right: 80px;
+    padding-left: 80px;
+    background-color: var(--clear-background);
+}
+
+.cart-popup p {
+    font-size: 24px;
+    letter-spacing: 0.55px;
+    margin-top: 56px;
+    margin-bottom: 48px;
+    margin-right: 95px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cart-popup p::before {
+    content: "";
+    display: block;
+    width: 66px;
+    height: 66px;
+    margin-right: 30px;
+    background-image: url(../img/icon-mark.svg);
+}
+
+.cart-popup .modal-button-container {
+    padding-right: 113px;
+    padding-left: 113px;
 }
 
 /* Header */
@@ -1373,7 +1411,7 @@ a:active .special-button {
     right: -10px;
 }
 
-.tabs label.button {
+.tabs-button {
     background-color: var(--dark-background);
     color: var(--basic-type-contrast);
     font-weight: bold;
@@ -1388,31 +1426,30 @@ a:active .special-button {
     padding-bottom: 22px;
     text-align: left;
     grid-column: 1 / 2;
+    cursor: pointer;
 }
 
-.services-input .button:hover,
-.services-input:focus + .button {
+.tabs-button:hover,
+.tabs-button:focus{
     background-color: var(--dark-background-extra);
 }
 
 .tabs:focus-within {
-    outline: -webkit-focus-ring-color auto 1px;;
+    outline: -webkit-focus-ring-color auto 1px;
 }
 
-.services-input:checked + .button {
+.tabs-button-current {
     background-color: var(--clear-background);
     color: var(--dark-background-extra);
 }
 
-#radio-delivery:checked ~ .box-delivery {
-    display: block;
+.tabs-button-current:hover,
+.tabs-button-current:focus {
+    color: var(--transparent-extra-type);
+    background-color: var(--clear-background);
 }
 
-#radio-warranty:checked ~ .box-warranty {
-    display: block;
-}
-
-#radio-credit:checked ~ .box-credit {
+.tabs-box-current {
     display: block;
 }
 
@@ -1976,7 +2013,7 @@ input:focus + .manufacturers-label,
     text-decoration-style: solid;
 }
 
-input[name="sort-category"]:checked + .sort-button {
+.sort-category-current {
     color: var(--emphasis);
     opacity: 1;
     text-decoration: none;
@@ -2036,7 +2073,7 @@ input[name="sort-category"]:checked + .sort-button {
     left: calc(50% - 5px);
 }
 
-.sort-radio:checked + .sort-arrow::before {
+.sort-arrow-current::before {
     filter: none;
     opacity: 1;
 }
