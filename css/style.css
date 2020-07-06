@@ -370,23 +370,19 @@ a:active .special-button {
 
 /* Modal */
 
-.modal-box {
+.modal {
     position: fixed;
-    width: 100%;
-    height: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
     display: none;
-    justify-content: center;
-    align-items: center;
     z-index: 2;
-}
-
-.modal-inner-box {
-    position: relative;
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
 }
 
-
-.modal-inner-box::before {
+.modal::before {
     content: "";
     position: absolute;
     width: 100%;
@@ -397,16 +393,34 @@ a:active .special-button {
 }
 
 .modal-close-button {
-    font-size: 0;
     background-color: transparent;
     border: none;
-    background-image: url(../img/icon-close.svg);
-    width: 21px;
-    height: 21px;
+    width: 44px;
+    height: 34px;
     cursor: pointer;
     position: absolute;
-    top: 21px;
-    right: 11px;
+    top: 12px;
+    right: -1px;
+}
+
+.modal-close-button::before,
+.modal-close-button::after {
+    content: "";
+    position: absolute;
+    top: 15px;
+    left: 8px;
+    width: 27px;
+    height: 4px;
+    border-radius: 1px;
+    background-color: var(--emphasis);
+}
+
+.modal-close-button::before {
+    transform: rotate(45deg);
+}
+
+.modal-close-button::after {
+    transform: rotate(-45deg);
 }
 
 .modal-button-container {
@@ -434,15 +448,23 @@ a:active .special-button {
     margin-left: 10px;
 }
 
-.modal-map img {
-    margin-bottom: -7px;
+.modal-map {
+    width: 934px;
+    height: 449px;
 }
+
+.modal-map iframe {
+    border: none;
+    margin-bottom: -7px;
+  }
 
 .modal-form {
     padding-right: 80px;
     padding-left: 80px;
     background-color: var(--clear-background);
     width: 620px;
+    top: calc(50% - 215px);
+    bottom: auto;
 }
 
 .form-box  {
@@ -488,17 +510,20 @@ a:active .special-button {
 }
 
 .modal-active {
-    display: flex;
+    display: block;
 }
 
-.cart-popup {
+.modal-cart {
     min-width: 620px;
     padding-right: 80px;
     padding-left: 80px;
-    background-color: var(--clear-background);
+    background-color: var(--clear-background);   
+    width: 620px;
+    top: calc(50% - 141px);
+    bottom: auto;
 }
 
-.cart-popup p {
+.modal-cart p {
     font-size: 24px;
     letter-spacing: 0.55px;
     margin-top: 56px;
@@ -509,7 +534,7 @@ a:active .special-button {
     justify-content: center;
 }
 
-.cart-popup p::before {
+.modal-cart p::before {
     content: "";
     display: block;
     width: 66px;
@@ -518,7 +543,7 @@ a:active .special-button {
     background-image: url(../img/icon-mark.svg);
 }
 
-.cart-popup .modal-button-container {
+.modal-cart .modal-button-container {
     padding-right: 113px;
     padding-left: 113px;
 }
@@ -1153,6 +1178,7 @@ a:active .special-button {
     text-align: center;
     letter-spacing: -.036rem;
     line-height: 21px;
+    flex-grow: 1;
 }
 
 .past-price {
@@ -1168,9 +1194,8 @@ a:active .special-button {
 .actual-price {
     background-color: var(--emphasis);
     color: var(--basic-type-contrast);
-    position: absolute;
-    bottom: 20px;
-    left: 44px;
+    position: relative;
+    left: -4px;
     height: 38px;
     width: 122px;
     margin: 0;
@@ -1179,6 +1204,8 @@ a:active .special-button {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
 }
 
 .actual-price::after {
@@ -1318,7 +1345,7 @@ a:active .special-button {
     margin: 0;
     padding: 0;
     padding-top: 71px;
-    padding-bottom: 97px;
+    padding-bottom: 94px;
     position: relative;
     display: grid;
     grid-template-columns: 240px 1fr;
@@ -1537,6 +1564,7 @@ a:active .special-button {
 
 .footer-nav {
     background-color: var(--dark-background);
+    padding: 0 20px;
 }
 
 .footer-nav .wrapper {
