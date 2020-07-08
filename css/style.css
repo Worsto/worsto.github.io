@@ -224,6 +224,7 @@ input[type="radio"].visually-hidden {
 
 .button {
     display: inline-block;
+    vertical-align: middle;
     min-width: 192px;
     text-align: center;
     margin-top: -1px;
@@ -390,6 +391,7 @@ a:active .special-button {
     background-color: var(--emphasis);
     top: 0;  
     left: 0;
+    z-index: 3;
 }
 
 .modal-close-button {
@@ -401,6 +403,7 @@ a:active .special-button {
     position: absolute;
     top: 12px;
     right: -1px;
+    z-index: 2;
 }
 
 .modal-close-button::before,
@@ -453,12 +456,23 @@ a:active .special-button {
     height: 449px;
 }
 
+.modal-map p {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  
+    margin: 0;
+  }
+
 .modal-map iframe {
+    position: relative;
+    z-index: 2;
     border: none;
     margin-bottom: -7px;
   }
 
-.modal-form {
+.modal-write-us {
     padding-right: 80px;
     padding-left: 80px;
     background-color: var(--clear-background);
@@ -499,6 +513,7 @@ a:active .special-button {
     min-height: 38px;
     padding-left: 10px;
     width: 220px;
+    font-size: 13px;
 }
 
 .form-item textarea {
@@ -511,6 +526,11 @@ a:active .special-button {
 
 .modal-active {
     display: block;
+    animation: bounce 0.6s;
+}
+
+.modal-error {
+  animation: shake 0.6s;
 }
 
 .modal-cart {
@@ -1127,6 +1147,7 @@ a:active .special-button {
     font-family: 'Cuprum', sans-serif;
     position: relative;
     cursor: pointer;
+    font-size: 14px;
 }
 
 .goods-action .button-deal {
@@ -1461,10 +1482,6 @@ a:active .special-button {
     background-color: var(--dark-background-extra);
 }
 
-.tabs:focus-within {
-    outline: -webkit-focus-ring-color auto 1px;
-}
-
 .tabs-button-current {
     background-color: var(--clear-background);
     color: var(--dark-background-extra);
@@ -1601,11 +1618,15 @@ a:active .special-button {
     margin-left: 22px;
 }
 
-.footer-contacts {margin-bottom: -5px;margin-top: 9px;}
+.footer-contacts {
+    margin-bottom: -5px;
+    margin-top: 9px;
+}
 
 .footer-contacts a {
     padding: 4px;
     display: inline-block;
+    vertical-align: middle;
     margin-bottom: 0;
 }
 
@@ -2054,11 +2075,6 @@ input:focus + .manufacturers-label,
 .sort-category-box {
     display: flex;
 }
-
-.sort-arrow-box:focus-within,
-.sort-category-box:focus-within {
-    outline: -webkit-focus-ring-color auto 1px;;
-}
     
 .sort-arrow {
     border: none;
@@ -2121,6 +2137,7 @@ input:focus + .manufacturers-label,
 
 .price-controls span {
     display: inline-block;
+    vertical-align: middle;
     margin-top: 7px;
 }
 
@@ -2138,3 +2155,45 @@ input:focus + .manufacturers-label,
     padding-top: 70px;
     padding-bottom: 60px;
 }
+
+/* Animations */
+
+@keyframes bounce {
+    0% {
+      transform: translateY(-2000px);
+    }
+  
+    70% {
+      transform: translateY(30px);
+    }
+  
+    90% {
+      transform: translateY(-10px);
+    }
+  
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes shake {
+    0%,
+    100% {
+      transform: translateX(0);
+    }
+  
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+      transform: translateX(-10px);
+    }
+  
+    20%,
+    40%,
+    60%,
+    80% {
+      transform: translateX(10px);
+    }
+  }
