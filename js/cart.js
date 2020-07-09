@@ -19,4 +19,4 @@ cartClose.addEventListener("click", function (evt) {
 keepBuying.addEventListener("click", function (evt) {
     evt.preventDefault();
     cartPopup.classList.remove("modal-active");
-});
+}); 
