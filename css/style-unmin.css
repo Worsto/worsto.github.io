@@ -1729,6 +1729,11 @@ a.footer-extra-color {
     margin: 0;
 }
 
+.footer-feedback a:active {
+    color: var(--emphasis);
+    text-decoration: none;
+}
+
 /* Catalog */
 
 .page-catalog {
