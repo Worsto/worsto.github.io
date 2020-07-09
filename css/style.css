@@ -1078,13 +1078,15 @@ a:active .special-button {
 
 .slider-controls {
     position: absolute;
-    bottom: 36px;
+    bottom: 31px;
     justify-content: center;
     left: 216px;
     right: 206px;
     display: flex;
     flex-wrap: wrap;
     margin: 0 auto;
+    list-style: none;
+    padding: 0;
 }
 
 .slider-controls button {
@@ -2087,12 +2089,22 @@ input:focus + .manufacturers-label,
 
 .sort-arrow-box {
     display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 .sort-category-box {
     display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
     
+.sort-category-box li {
+    display: flex;
+}
+
 .sort-arrow {
     border: none;
     background-color: transparent;
