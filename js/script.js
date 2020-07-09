@@ -1,4 +1,4 @@
-// Слайдер
+// Slider
 
 let sliderButtons = document.querySelectorAll(".slider-radio");
 let sliderInformation = document.querySelectorAll(".slider-item");
@@ -70,7 +70,7 @@ sliderForward.addEventListener("click", function (evt) {
     }
 });
 
-// Табы
+// Tabs
 
 let tabsButtons = document.querySelectorAll(".tabs-button");
 let tabsInformation = document.querySelectorAll(".tabs-information");
