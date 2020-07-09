@@ -56,7 +56,7 @@ body {
     min-width: 960px;
     margin: 0;
     padding: 0;
-    font-family: 'Cuprum', sans-serif;
+    font-family: 'Cuprum', 'Arial', sans-serif;
     font-size: 18px;
     line-height: 24px;
     font-weight: normal;
@@ -161,7 +161,7 @@ input[type="radio"].visually-hidden {
 .path-link,
 .filter,
 .sort-box {
-    font-family: 'PT Sans', sans-serif;
+    font-family: 'PT Sans', 'Arial', sans-serif;
 }
 
 /* Buttons */
@@ -527,7 +527,7 @@ a:active .special-button {
     height: 114px;
     padding-top: 7px;
     padding-left: 9px;
-    font-family: "PT Sans", sans-serif;
+    font-family: "PT Sans", 'Arial', sans-serif;
 }
 
 .modal-active {
@@ -1153,7 +1153,7 @@ a:active .special-button {
     display: block;
     width: 135px;
     border-radius: 2px;
-    font-family: 'Cuprum', sans-serif;
+    font-family: 'Cuprum', 'Arial', sans-serif;
     position: relative;
     cursor: pointer;
     font-size: 14px;
@@ -1667,7 +1667,6 @@ a:active .special-button {
 
 .footer-social {
     padding-left: 0;
-    width: 130px;
     justify-self: center;
     list-style: none;
     display: flex;
@@ -1675,6 +1674,10 @@ a:active .special-button {
     justify-content: space-between;
     margin: 0;
     margin-left: -29px;
+}
+
+.footer-social li {
+    margin-right: 5px;
 }
 
 .social-button {
@@ -2042,7 +2045,7 @@ input:focus + .manufacturers-label,
 
 .price-controls label {
     text-transform: uppercase;
-    font-family: "PT Sans", sans-serif;
+    font-family: "PT Sans", 'Arial', sans-serif;
     font-size: 16px;
 }
 
@@ -2119,7 +2122,7 @@ input:focus + .manufacturers-label,
     cursor: pointer;
     position: relative;
     width: 32px;
-    padding: 0;
+    padding: 10px;
 }
 
 .sort-arrow::before {
